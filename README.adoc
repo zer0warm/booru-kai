@@ -5,6 +5,24 @@ v0.0.1, 12/10/2020
 == Instructions
 
 === blur-downloaded-image
+
+==== Installation
 1. Install and enable https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo[Tampermonkey] extension.
-2. Each time before downloading images, run link:blur-downloaded-image/get_local_md5_danbooru.ps1[the related powershell script] by either clicking it or navigate in the CLI.
-3. Profit.
+2. Navigate to local `Tampermonkey` dashboard, click the tab with the plus symbol, and override the content of `<New userscript>` file with link:blur-downloaded-image/blur_image.js[blur_image.js].
+3. Copy link:blur-downloaded-image/get_local_md5_danbooru.ps1[get_local_md5_danbooru.ps1] to your image parent folder. For example if you have a folder structure like this:
+....
+booru-pics\
+  |--pic1-with-trailing-danbooru-md5.jpg
+  |--pic2-with-trailing-danbooru-md5.png
+  |--specific-char-pics\
+       |--some-pic-with-trailing-danbooru-md5.jpg
+  |--scenery\
+       |--another-pic-with-trailing-danbooru-md5.jpg
+  [...]
+....
+Put link:blur-downloaded-image/get_local_md5_danbooru.ps1[get_local_md5_danbooru.ps1] to `booru-pics` folder.
+
+==== Usage
+1. Each time before downloading images, run `get_local_md5_danbooru.ps1` from the image folder by right-clicking it and choose `Run with PowerShell`. This will save the list of md5 hashes collected in the image folder.
+2. Navigate to the local `Tampermonkey` dashboard described in the previous section and edit the content of `BlurDownloadedImage` script. Move the cursor to between the empty double quotes in the `"downloaded-md5s"` line and paste the md5 hashes there.
+3. Save the script and enjoy browsing.
