@@ -1,0 +1,10 @@
+= booru-kai
+zer0warm <dqhieu.2016@gmail.com>
+v0.0.1, 12/10/2020
+
+== Instructions
+
+=== blur-downloaded-image
+1. Install and enable https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo[Tampermonkey] extension.
+2. Each time before downloading images, run link:blur-downloaded-image/get_local_md5_danbooru.ps1[the related powershell script] by either clicking it or navigate in the CLI.
+3. Profit.
